@@ -3957,7 +3957,7 @@ div.page-gallery {
   }
 }
 
-.page-intro {
+.page-intro-image {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -3966,7 +3966,6 @@ div.page-gallery {
   color: #ffffff;
   overflow: hidden;
 }
-
 .page-intro-image img {
   display: block;
   position: relative;
