@@ -3965,6 +3965,7 @@ div.page-gallery {
   justify-content: center;
   color: #ffffff;
   overflow: hidden;
+  padding: 3rem;
 }
 
 .page-intro-image img {
@@ -3984,6 +3985,7 @@ div.page-gallery {
 .page-intro-text {
   position: relative;
   z-index: 100;
+  margin: 0;
   line-height: 1.2;
   font-size: 1.25em;
   font-weight: 550;
