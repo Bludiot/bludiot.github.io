@@ -3970,6 +3970,9 @@ div.page-gallery {
 .page-intro-image {
   position: relative;
 }
+.page-intro-image img {
+  display: block;
+}
 .page-intro-image:before {
   content: "";
   position: absolute;

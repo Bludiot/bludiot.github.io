@@ -1162,6 +1162,10 @@ div.page-gallery {
 .page-intro-image {
 	position: relative;
 
+	img {
+		display: block;
+	}
+
 	&:before {
 		content: '';
 		position: absolute;
