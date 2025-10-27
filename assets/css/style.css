@@ -3964,6 +3964,7 @@ div.page-gallery {
   align-items: center;
   justify-content: center;
   color: #ffffff;
+  overflow: hidden;
 }
 
 .page-intro-image {
@@ -3980,9 +3981,11 @@ div.page-gallery {
 }
 
 .page-intro-text {
+  z-index: 100;
   line-height: 1.2;
   font-size: 1.25em;
   font-weight: 550;
+  color: #ffffff;
 }
 
 .page-sidebar {
