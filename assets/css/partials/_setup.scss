@@ -1,0 +1,606 @@
+///
+/// General styles
+///
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	display: var( --cfe-body--display, block );
+	overflow-x: var( --cfe-body--overflow-x );
+	overflow-y: var( --cfe-body--overflow-y );
+	position: var( --cfe-body--position, relative );
+	width: var( --cfe-body--width, 100% );
+	height: var( --cfe-body--height, 100% );
+	max-width: var( --cfe-body--max-width, 2048px );
+	max-height: var( --cfe-body--max-height );
+	margin: var( --cfe-body--margin, 0 auto );
+	padding: var( --cfe-body--padding, 0 );
+	font-family: var( --cfe-body--font-family, var( --cfe-fonts--sans-stack, sans-serif ) );
+	font-size: var( --cfe-body--font-size, 1rem );
+	font-weight: var( --cfe-body--font-weight, normal );
+	font-style: var( --cfe-body--font-style, normal );
+	font-variant: var( --cfe-body--font-variant, normal );
+	text-decoration: var( --cfe-body--text-decoration );
+	text-transform: var( --cfe-body--text-transform );
+	letter-spacing: var( --cfe-body--letter-spacing, normal );
+	word-spacing: var( --cfe-body--word-spacing, normal );
+	line-height: var( --cfe-body--line-height, 1.5 );
+	background-color: var( --cfe-body--bg-color );
+	background-image: var( --cfe-body--bg-image );
+	background-repeat: var( --cfe-body--bg-repeat );
+	background-position: var( --cfe-body--bg-position );
+	background-size: var( --cfe-body--bg-size );
+	background-attachment: var( --cfe-body--bg-attachment );
+	color: var( --cfe-body--text-color );
+
+	@media ( prefers-color-scheme: dark ) {
+		background-color: var( --cfe-body--bg-color--dark );
+		color: var( --cfe-body--text-color--dark );
+	}
+
+	&.serif:not( .monospace ) {
+		font-family: var( --cfe-fonts--serif-stack, serif );
+	}
+
+	&.monospace:not( .serif ) {
+		font-family: var( --cfe-fonts--monospace-stack, monospace );
+	}
+
+	/// Using padding rather than margin for tooltips
+	/// the position on body at 0,0 in the viewport.
+	&.toolbar-active {
+		padding-top: var( --cfe-toolbar--height );
+
+		&.toolbar-mobile-hidden {
+			@media screen and ( max-width: 960px ) {
+				padding-top: 0;
+			}
+		}
+	}
+}
+
+///
+/// Screen reader text
+///
+/// Use when text needs to be hidden for
+/// display purposes but needs to be in
+/// the DOM for visually impaired/blind
+/// people and for search engines.
+///
+/// No variables because this class does
+/// not need to/ought not change.
+.screen-reader-text {
+	border: 0;
+	clip: rect( 1px, 1px, 1px, 1px );
+	-webkit-clip-path: inset(50%);
+	        clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+// JavaScript helper classes.
+.no-js {
+	.hide-if-no-js {
+		display: none !important;
+	}
+}
+
+.js {
+	.hide-if-js {
+		display: none !important;
+	}
+}
+
+// General layout styles
+.wrapper-general {
+	display: var( --cfe-wrapper--general--display, block );
+	position: var( --cfe-wrapper--general--position );
+	overflow-x: var( --cfe-wrapper--general--overflow-x );
+	overflow-y: var( --cfe-wrapper--general--overflow-y );
+	width: var( --cfe-wrapper--general--width, 100% );
+	max-width: var( --cfe-wrapper--general--max-width, 100% );
+	min-width: var( --cfe-wrapper--general--min-width );
+	height: var( --cfe-wrapper--general--height );
+	max-height: var( --cfe-wrapper--general--max-height );
+	min-height: var( --cfe-wrapper--general--min-height );
+	margin: var( --cfe-wrapper--general--margin, 0 );
+	padding: var( --cfe-wrapper--general--padding, 0 );
+}
+
+.page-wrap {
+	container-type: inline-size;
+	container-name: page-wrap;
+	display: var( --cfe-wrapper--page--display, block );
+	position: var( --cfe-wrapper--page--position );
+	overflow-x: var( --cfe-wrapper--page--overflow-x );
+	overflow-y: var( --cfe-wrapper--page--overflow-y );
+	width: var( --cfe-wrapper--page--width, 100% );
+	max-width: var( --cfe-wrapper--page--max-width, 100% );
+	min-width: var( --cfe-wrapper--page--min-width );
+	height: var( --cfe-wrapper--page--height );
+	max-height: var( --cfe-wrapper--page--max-height );
+	min-height: var( --cfe-wrapper--page--min-height );
+	margin: var( --cfe-wrapper--page--margin, 0 auto );
+	padding: var( --cfe-wrapper--page--padding );
+}
+
+// General block text elements.
+h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, fieldset, table, pre {
+	margin: var( --cfe-element--margin, calc( var( --cfe-spacing--vert ) / 2 ) 0 0 0 );
+	padding: var( --cfe-element--padding );
+}
+
+a {
+	display: var( --cfe-link--display );
+	position: var( --cfe-link--position );
+	font-size: var( --cfe-link--font-size, inherit );
+	font-weight: var( --cfe-link--font-weight, inherit );
+	font-style: var( --cfe-link--font-style, inherit );
+	font-variant: var( --cfe-link--font-variant, inherit );
+	text-decoration: var( --cfe-link--text-decoration );
+	text-underline-offset: var( --cfe-link--text-underline-offset );
+	text-transform: var( --cfe-link--text-transform, inherit );
+	letter-spacing: var( --cfe-link--letter-spacing, inherit );
+	word-spacing: var( --cfe-link--word-spacing, inherit );
+	color: var( --cfe-link--text-color );
+	transition: var( --cfe-link--transition, all 0.15s );
+
+	@media ( prefers-color-scheme: dark ) {
+		color: var( --cfe-link--text-color--dark );
+	}
+
+	&:hover,
+	&:focus {
+		color: var( --cfe-link--action--text-color );
+
+		@media ( prefers-color-scheme: dark ) {
+			color: var( --cfe-link--action--text-color--dark );
+		}
+	}
+
+	// Pseudo elements for custom hover effects.
+	&:before {
+		content: var( --cfe-link--before--content );
+		display: var( --cfe-link--before--display );
+		position: var( --cfe-link--before--position );
+		width: var( --cfe-link--before--width );
+		height: var( --cfe-link--before--height );
+		background-color: var( --cfe-link--before--bg-color );
+
+		@media ( prefers-color-scheme: dark ) {
+			background-color: var( --cfe-link--before--bg-color--dark );
+		}
+	}
+
+	&:after {
+		content: var( --cfe-link--after--content );
+		display: var( --cfe-link--after--display );
+		position: var( --cfe-link--after--position );
+		width: var( --cfe-link--after--width );
+		height: var( --cfe-link--after--height );
+		background-color: var( --cfe-link--after--bg-color );
+
+		@media ( prefers-color-scheme: dark ) {
+			background-color: var( --cfe-link--after--bg-color--dark );
+		}
+	}
+}
+
+h1,
+h2 {
+	font-family: var( --cfe-heading-primary--font-family, var( --cfe-fonts--display-stack, inherit ) );
+	font-size: var( --cfe-heading-primary--font-size, 2rem );
+	font-weight: var( --cfe-heading-primary--font-weight, 700 );
+	font-style: var( --cfe-heading-primary--font-style, inherit );
+	font-variant: var( --cfe-heading-primary--font-variant, inherit );
+	line-height: var( --cfe-heading-primary--line-height, inherit );
+	letter-spacing: var( --cfe-heading-primary--letter-spacing, -0.015em );
+	word-spacing: var( --cfe-heading-primary--word-spacing, -0.0325em );
+	text-decoration: var( --cfe-heading-primary--text-decoration );
+	text-transform: var( --cfe-heading-primary--text-transform );
+	color: var( --cfe-heading-primary--text-color, var( --cfe-body--text-color ) );
+
+	@media ( prefers-color-scheme: dark ) {
+		color: var( --cfe-heading-primary--text-color--dark, var( --cfe-body--text-color--dark ) );
+	}
+
+	a {
+		font-family: var( --cfe-heading-primary--link--font-family, inherit );
+		font-size: var( --cfe-heading-primary--link--font-size, inherit );
+		font-weight: var( --cfe-heading-primary--link--font-weight, inherit );
+		font-style: var( --cfe-heading-primary--link--font-style, inherit );
+		font-variant: var( --cfe-heading-primary--link--font-variant, inherit );
+		text-decoration: var( --cfe-heading-primary--link--text-decoration, none );
+		text-transform: var( --cfe-heading-primary--link--text-transform );
+		color: var( --cfe-heading-primary--link--text-color, var( --cfe-link--text-color ) );
+
+		@media ( prefers-color-scheme: dark ) {
+			color: var( --cfe-heading-primary--link--text-color--dark, var( --cfe-link--text-color--dark ) );
+		}
+
+		&:hover,
+		&:focus {
+			color: var( --cfe-heading-primary--link--action--text-color, var( --cfe-link--action--text-color ) );
+
+			@media ( prefers-color-scheme: dark ) {
+				color: var( --cfe-heading-primary--link--action--text-color--dark, var( --cfe-link--action--text-color--dark ) );
+			}
+		}
+	}
+}
+
+h3,
+h4 {
+	font-family: var( --cfe-heading-secondary--font-family, var( --cfe-fonts--display-stack, inherit ) );
+	font-size: var( --cfe-heading-secondary--font-size, 1.375rem );
+	font-weight: var( --cfe-heading-secondary--font-weight, 700 );
+	font-style: var( --cfe-heading-secondary--font-style, inherit );
+	font-variant: var( --cfe-heading-secondary--font-variant, inherit );
+	line-height: var( --cfe-heading-secondary--line-height, inherit );
+	letter-spacing: var( --cfe-heading-secondary--letter-spacing, normal );
+	word-spacing: var( --cfe-heading-secondary--word-spacing, -0.0325em );
+	text-decoration: var( --cfe-heading-secondary--text-decoration );
+	text-transform: var( --cfe-heading-secondary--text-transform );
+	color: var( --cfe-heading-secondary--text-color, var( --cfe-body--text-color ) );
+
+	@media ( prefers-color-scheme: dark ) {
+		color: var( --cfe-heading-secondary--text-color--dark, var( --cfe-body--text-color--dark ) );
+	}
+
+	a {
+		font-family: var( --cfe-heading-secondary--link--font-family, inherit );
+		font-size: var( --cfe-heading-secondary--link--font-size, inherit );
+		font-weight: var( --cfe-heading-secondary--link--font-weight, inherit );
+		font-style: var( --cfe-heading-secondary--link--font-style, inherit );
+		font-variant: var( --cfe-heading-secondary--link--font-variant, inherit );
+		text-decoration: var( --cfe-heading-secondary--link--text-decoration, inherit );
+		text-transform: var( --cfe-heading-secondary--link--text-transform, inherit );
+		color: var( --cfe-heading-secondary--link--text-color, var( --cfe-link--text-color ) );
+
+		@media ( prefers-color-scheme: dark ) {
+			color: var( --cfe-heading-secondary--link--text-color--dark, var( --cfe-link--text-color--dark ) );
+		}
+
+		&:hover,
+		&:focus {
+			color: var( --cfe-heading-secondary--link--action--text-color, var( --cfe-link--action--text-color ) );
+
+			@media ( prefers-color-scheme: dark ) {
+				color: var( --cfe-heading-secondary--link--action--text-color--dark, var( --cfe-link--action--text-color--dark ) );
+			}
+		}
+	}
+}
+
+.text-success {
+	color: var( --cfe-text-color--green, $success );
+}
+
+.text-info {
+	color: var( --cfe-text-color--blue, $blue );
+}
+
+.text-warning {
+	color: var( --cfe-text-color--orange, $notify );
+}
+
+.text-danger {
+	color: var( --cfe-text-color--red, $danger );
+}
+
+// Used for `ul` and `ol` elements.
+.inline-list {
+	display: var( --cfe-inline-list--display, inline-flex );
+	flex-direction: var( --cfe-inline-list--flex-direction, row );
+	flex-wrap: var( --cfe-inline-list--flex-wrap, wrap );
+	gap: var( --cfe-inline-list--gap, 0 0.5em );
+	margin: var( --cfe-inline-list--margin, 0 );
+	padding: var( --cfe-inline-list--padding, 0 );
+}
+
+// Theme icons.
+.svg-icon,
+.theme-icon {
+	position: var( --cfe-icon--position );
+	display: var( --cfe-icon--display, inline-block );
+	width: var( --cfe-icon--width, var( --cfe-icon--size, 1em ) );
+	height: var( --cfe-icon--height, var( --cfe-icon--size, 1em ) );
+	vertical-align: var( --cfe-icon--vertical-align, baseline );
+	line-height: var( --cfe-icon--line-height, 1 );
+	background-color: var( --cfe-icon--bg-color );
+	color: var( --cfe-icon--text-color, inherit );
+
+	@media ( prefers-color-scheme: dark ) {
+		background-color: var( --cfe-icon--bg-color--dark );
+		color: var( --cfe-icon--text-color--dark, inherit );
+	}
+
+	svg {
+		position: var( --cfe-icon--svg--position );
+		display: var( --cfe-icon--svg--display, inline-block );
+		fill: var( --cfe-icon--svg--fill, currentColor );
+		width: var( --cfe-icon--svg--width, var( --cfe-icon--size, 1em ) );
+		height: var( --cfe-icon--svg--height, var( --cfe-icon--size, 1em ) );
+		vertical-align: var( --cfe-icon--svg--vertical-align, middle );
+	}
+}
+
+// Optional page loading screen.
+#page-loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: var( --cfe-loader--z-index, 99999 );
+	display: var( --cfe-loader--display, flex );
+	flex-direction: var( --cfe-loader--flex-direction, column );
+	align-items: var( --cfe-loader--align-items, center );
+	justify-content: var( --cfe-loader--justify-content, center );
+	background-color: var( --cfe-loader--bg-color, var( --cfe-body--bg-color ) );
+	color: var( --cfe-loader--text-color, var( --cfe-body--text-color ) );
+
+	@media ( prefers-color-scheme: dark ) {
+		background-color: var( --cfe-loader--bg-color--dark, var( --cfe-body--bg-color--dark ) );
+		color: var( --cfe-loader--text-color--dark, var( --cfe-body--text-color--dark ) );
+	}
+
+	.loading-text {
+		font-family: var( --cfe-loader--text--font-family, var( --cfe-heading-secondary--font-family ) );
+		font-size: var( --cfe-loader--text--font-size, var( --cfe-heading-secondary--font-size, 1.375rem ) );
+		font-weight: var( --cfe-loader--text--font-weight, var( --cfe-heading-secondary--font-weight ) );
+		font-style: var( --cfe-loader--text--font-style, var( --cfe-heading-secondary--font-style ) );
+		font-variant: var( --cfe-loader--text--font-variant, var( --cfe-heading-secondary--font-variant ) );
+		line-height: var( --cfe-loader--text--line-height, var( --cfe-heading-secondary--line-height ) );
+		letter-spacing: var( --cfe-loader--text--letter-spacing, var( --cfe-heading-secondary--letter-spacing ) );
+		word-spacing: var( --cfe-loader--text--word-spacing, var( --cfe-heading-secondary--word-spacing ) );
+		text-decoration: var( --cfe-loader--text--text-decoration, var( --cfe-heading-secondary--text-decoration ) );
+		text-transform: var( --cfe-loader--text--text-transform, var( --cfe-heading-secondary--text-transform ) );
+	}
+
+	.loading-image {
+		display: var( --cfe-loader--image--display, block );
+		position: var( --cfe-loader--image--position );
+		overflow-x: var( --cfe-loader--image--overflow-x );
+		overflow-y: var( --cfe-loader--image--overflow-y );
+		width: var( --cfe-loader--image--width, 1.75rem );
+		height: var( --cfe-loader--image--height, 1.75rem );
+		margin: var( --cfe-loader--image--margin, 2rem 0 0 0 );
+		padding:  var( --cfe-loader--image--padding, 0 );
+		-webkit-animation: spinner 1s infinite linear;
+		animation: spinner 1s infinite linear;
+
+		&.spinner-dashes {
+			-webkit-animation: spinner 1.5s infinite linear;
+			animation: spinner 1.5s infinite linear;
+		}
+
+		svg {
+			width: var( --cfe-loader--image--width, 1.75rem );
+			height: var( --cfe-loader--image--height, 1.75rem );
+			fill: var( --cfe-loader--image--fill, currentColor );
+
+			@media ( prefers-color-scheme: dark ) {
+				fill: var( --cfe-loader--image--fill--dark, currentColor );
+			}
+		}
+	}
+}
+
+// Optional "back to top" button.
+#to-top {
+	opacity: var( --cfe-to-top--opacity, 0 );
+	pointer-events: var( --cfe-to-top--pointer-events, none );
+	position: var( --cfe-to-top--position, fixed );
+	top: var( --cfe-to-top--top );
+	left: var( --cfe-to-top--left );
+	right: var( --cfe-to-top--right, 2rem );
+	bottom: var( --cfe-to-top--bottom, 2rem );
+	width: var( --cfe-to-top--width, 3rem );
+	height: var( --cfe-to-top--height, 3rem );
+	display: var( --cfe-to-top--display, flex );
+	align-items: var( --cfe-to-top--align-items, center );
+	justify-content: var( --cfe-to-top--justify-content, center );
+	background-color: var( --cfe-button--bg-color );
+	border: var( --cfe-form-element--border );
+	border-color: var( --cfe-button--border-color, var( --cfe-form--border-color ) );
+	color: var( --cfe-to-top--text-color, var( --cfe-button--text-color ) );
+	border-radius: var( --cfe-to-top--border-radius, 50% );
+	transform: var( --cfe-to-top--transform, translateY(0) );
+	transition: var( --cfe-to-top--transition, opacity .5s, background-color .25s, transform .25s );
+
+	@media ( prefers-color-scheme: dark ) {
+		background-color: var( --cfe-button--bg-color--dark );
+		border-color: var( --cfe-button--border-color--dark, var( --cfe-form--border-color--dark ) );
+		color: var( --cfe-to-top--text-color--dark, var( --cfe-button--text-color--dark ) );
+	}
+
+	@media screen and ( max-width: 640px ) {
+		display: none;
+	}
+
+	&.scrolled {
+		opacity: var( --cfe-to-top--scrolled--opacity, 1 );
+		pointer-events: var( --cfe-to-top--scrolled--pointer-events, all );
+	}
+
+	&:hover {
+		background-color: var( --cfe-to-top--action--bg-color, var( --cfe-button--action--bg-color, var( --cfe-button--bg-color ) ) );
+		border-color: var( --cfe-to-top--action--border-color, var( --cfe-button--action--border-color, var( --cfe-button--border-color ) ) );
+		color: var( --cfe-to-top--action--text-color, var( --cfe-button--action--text-color ) );
+		transform: var( --cfe-to-top--action--transform, translateY( -0.25rem ) );
+
+		@media ( prefers-color-scheme: dark ) {
+			background-color: var( --cfe-to-top--action--bg-color--dark, var( --cfe-button--action--bg-color--dark, var( --cfe-button--bg-color--dark ) ) );
+			border-color: var( --cfe-to-top--action--border-color--dark, var( --cfe-button--action--border-color--dark, var( --cfe-button--border-color--dark ) ) );
+			color: var( --cfe-to-top--action--text-color--dark, var( --cfe-button--action--text-color--dark ) );
+		}
+	}
+
+	svg {
+		width: var( --cfe-to-top--svg--width, 1.5rem );
+		height: var( --cfe-to-top--svg--height, 1.5rem );
+		fill: var( --cfe-to-top--svg--fill, currentColor );
+	}
+}
+
+pre {
+	white-space: pre-wrap;
+	white-space: break-spaces;
+	padding: 1em;
+	background-color: rgba( $color: black, $alpha: 0.0625 );
+
+	@media ( prefers-color-scheme: dark ) {
+		background-color: rgba( $color: white, $alpha: 0.0625 );
+	}
+
+	&.select {
+		user-select: all;
+	}
+}
+
+code {
+	background-color: rgba( $color: black, $alpha: 0.1 );
+
+	@media ( prefers-color-scheme: dark ) {
+		background-color: rgba( $color: white, $alpha: 0.1 );
+	}
+}
+
+code.select {
+	user-select: all;
+}
+
+// User avatar.
+.avatar {
+	vertical-align: var( --cfe-avatar--vertical-align, middle );
+	border-radius: var( --cfe-avatar--border-radius, 50% );
+}
+
+// Text selection.
+::-o-selection {
+	color: var( --cfe-selection--text-color, $near_black );
+	background: var( --cfe-selection--bg-color, $yellow );
+	text-shadow: none;
+
+	@media ( prefers-color-scheme: dark ) {}
+}
+::-ms-selection {
+	color: var( --cfe-selection--text-color, $near_black );
+	background: var( --cfe-selection--bg-color, $yellow );
+	text-shadow: none;
+
+	@media ( prefers-color-scheme: dark ) {}
+}
+::-webkit-selection {
+	color: var( --cfe-selection--text-color, $near_black );
+	background: var( --cfe-selection--bg-color, $yellow );
+	text-shadow: none;
+
+	@media ( prefers-color-scheme: dark ) {}
+}
+::-moz-selection {
+	color: var( --cfe-selection--text-color, $near_black );
+	background: var( --cfe-selection--bg-color, $yellow );
+	text-shadow: none;
+
+	@media ( prefers-color-scheme: dark ) {}
+}
+::selection {
+	color: var( --cfe-selection--text-color, $near_black );
+	background: var( --cfe-selection--bg-color, $yellow );
+	text-shadow: none;
+
+	@media ( prefers-color-scheme: dark ) {}
+}
+
+// Tooltips
+.tooltipster-sidetip.cfe-tooltips .tooltipster-box,
+.tooltipster-follower.cfe-tooltips .tooltipster-box {
+	border: none;
+	border-radius: 0px;
+	box-shadow: none;
+}
+
+.tooltipster-sidetip.cfe-tooltips .tooltipster-content,
+.tooltipster-follower.cfe-tooltips .tooltipster-content {
+	background-color: var( --cfe-tooltip--bg-color, var( --cfe-body--bg-color--dark, #333333 ) );
+	color: $white;
+	border-radius: 0px;
+	padding: 0.5em 0.625em;
+	line-height: 1;
+	font-size: 14px;
+	font-weight: 400;
+
+	@media ( prefers-color-scheme: dark ) {}
+}
+
+.tooltipster-sidetip .tooltipster-arrow-background {
+	border: 12px solid transparent;
+}
+
+.tooltipster-sidetip .tooltipster-arrow-border {
+	border: 12px solid transparent;
+	left: 0;
+	top: 0;
+}
+
+.tooltipster-sidetip.cfe-tooltips.tooltipster-bottom .tooltipster-arrow,
+.tooltipster-sidetip.cfe-tooltips.tooltipster-top .tooltipster-arrow {
+	bottom: -4px;
+	height: 12px;
+	margin-left: -12px;
+	width: 24px;
+}
+
+.tooltipster-sidetip.cfe-tooltips.tooltipster-bottom .tooltipster-arrow-border,
+.tooltipster-follower.cfe-tooltips.tooltipster-bottom .tooltipster-arrow-border {
+	border: none;
+}
+
+.tooltipster-sidetip.cfe-tooltips.tooltipster-left .tooltipster-arrow-border,
+.tooltipster-follower.cfe-tooltips.tooltipster-left .tooltipster-arrow-border {
+	border: none;
+}
+
+.tooltipster-sidetip.cfe-tooltips.tooltipster-right .tooltipster-arrow-border,
+.tooltipster-follower.cfe-tooltips.tooltipster-right .tooltipster-arrow-border {
+	border: none;
+}
+
+.tooltipster-sidetip.cfe-tooltips.tooltipster-top .tooltipster-arrow-border,
+.tooltipster-follower.cfe-tooltips.tooltipster-top .tooltipster-arrow-border {
+	border: none;
+}
+
+.tooltipster-sidetip.cfe-tooltips.tooltipster-bottom .tooltipster-arrow-background {
+	border-bottom-color: var( --cfe-tooltip--bg-color, var( --cfe-body--bg-color--dark, #333333 ) );
+
+	@media ( prefers-color-scheme: dark ) {}
+}
+
+.tooltipster-sidetip.cfe-tooltips.tooltipster-left .tooltipster-arrow-background {
+	border-left-color: var( --cfe-tooltip--bg-color, var( --cfe-body--bg-color--dark, #333333 ) );
+
+	@media ( prefers-color-scheme: dark ) {}
+}
+
+.tooltipster-sidetip.cfe-tooltips.tooltipster-right .tooltipster-arrow-background {
+	border-right-color: var( --cfe-tooltip--bg-color, var( --cfe-body--bg-color--dark, #333333 ) );
+
+	@media ( prefers-color-scheme: dark ) {}
+}
+
+.tooltipster-sidetip.cfe-tooltips.tooltipster-top .tooltipster-arrow-background {
+	border-top-color: var( --cfe-tooltip--bg-color, var( --cfe-body--bg-color--dark, #333333 ) );
+
+	@media ( prefers-color-scheme: dark ) {}
+}
