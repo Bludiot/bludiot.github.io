@@ -3972,6 +3972,7 @@ div.page-gallery {
 }
 .page-intro-image img:before {
   content: "";
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
