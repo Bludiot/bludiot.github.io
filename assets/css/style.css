@@ -3979,6 +3979,12 @@ div.page-gallery {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.page-intro-text {
+  line-height: 1.2;
+  font-size: 1.25em;
+  font-weight: 550;
+}
+
 .page-sidebar {
   position: var(--cfe-sidebar--position, var(--cfe-sidebar--position));
   display: var(--cfe-sidebar--display, var(--cfe-sidebar--display, flex));
