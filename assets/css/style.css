@@ -3965,12 +3965,9 @@ div.page-gallery {
   justify-content: center;
   color: #ffffff;
   overflow: hidden;
-}
-.page-intro-image img {
-  display: block;
   position: relative;
 }
-.page-intro-image img:before {
+.page-intro-image:before {
   content: "";
   display: block;
   position: absolute;
@@ -3979,6 +3976,10 @@ div.page-gallery {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+}
+.page-intro-image img {
+  display: block;
+  position: relative;
 }
 
 .page-intro-text {
