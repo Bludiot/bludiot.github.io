@@ -3967,13 +3967,11 @@ div.page-gallery {
   overflow: hidden;
 }
 
-.page-intro-image {
-  position: relative;
-}
 .page-intro-image img {
   display: block;
+  position: relative;
 }
-.page-intro-image:before {
+.page-intro-image img:before {
   content: "";
   position: absolute;
   top: 0;
@@ -3984,6 +3982,7 @@ div.page-gallery {
 }
 
 .page-intro-text {
+  position: relative;
   z-index: 100;
   line-height: 1.2;
   font-size: 1.25em;

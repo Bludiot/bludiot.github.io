@@ -1160,24 +1160,25 @@ div.page-gallery {
 }
 
 .page-intro-image {
-	position: relative;
 
 	img {
 		display: block;
-	}
+		position: relative;
 
-	&:before {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba( $color: black, $alpha: 0.5 );
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba( $color: black, $alpha: 0.5 );
+		}
 	}
 }
 
 .page-intro-text {
+	position: relative;
 	z-index: 100;
 	line-height: 1.2;
 	font-size: 1.25em;
