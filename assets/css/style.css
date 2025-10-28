@@ -3957,40 +3957,51 @@ div.page-gallery {
   }
 }
 
-.page-intro-image {
+.section-banner {
+  overflow: hidden;
+  position: relative;
+  background-color: #111111;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.section-banner .section-banner-inner {
   width: 100%;
+  height: 30vw;
+  min-height: 240px;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  overflow: hidden;
-  position: relative;
-}
-.page-intro-image:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
 }
-.page-intro-image img {
-  display: block;
-  position: relative;
+.section-banner h2 {
+  margin: 0;
+  line-height: 1.3;
+  text-align: center;
+  color: #ffffff;
 }
 
-.page-intro-text {
-  position: relative;
-  z-index: 100;
-  margin: 0;
+#page-intro-banner {
+  background-image: url("../../assets/images/stage.jpg");
+}
+
+#configureight-banner {
+  background-image: url("../../assets/images/swatches.jpg");
+}
+
+#plugins-banner {
+  background-image: url("../../assets/images/downloads.jpg");
+}
+
+#bludiot-info-banner {
+  background-image: url("../../assets/images/development.jpg");
+}
+
+.section-content {
   padding: 3rem;
-  line-height: 1.2;
-  font-size: 1.25em;
-  font-weight: 550;
-  color: #ffffff;
 }
 
 .page-sidebar {

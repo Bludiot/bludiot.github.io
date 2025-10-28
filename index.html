@@ -8,10 +8,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8
-/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" type="text/css" href="assets/css/style.min.css" />
-  <link rel="icon" href="assets/images/favicon.png">
+  <link rel="icon" href="assets/images/favicon.png" />
 
 </head>
 <body>
@@ -36,28 +35,33 @@
 			<div class="container-fluid">
 
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+					<span class="navbar-toggler-icon"></span>
 				</button>
 
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Home</a>
+							<a class="nav-link active" aria-current="page" href="#configureight">Configure 8</a>
 						</li>
 						<li class="nav-item">
-						<a class="nav-link" href="#">Features</a>
+							<a class="nav-link" href="#plugins">Plugins</a>
 						</li>
 						<li class="nav-item">
-						<a class="nav-link" href="#">Pricing</a>
+							<a class="nav-link" href="#bludiot-info">About</a>
 						</li>
 						<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown link</a>
-
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Action</a></li>
-							<li><a class="dropdown-item" href="#">Another action</a></li>
-							<li><a class="dropdown-item" href="#">Something else here</a></li>
-						</ul>
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item" href="https://github.com/Bludiot" target="_blank" rel="noopener noreferrer">Repository</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://www.bludit.com/" target="_blank" rel="noopener noreferrer">Bludit</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="https://forum.bludit.org/memberlist.php?mode=viewprofile&u=1652" rel="noopener noreferrer">Forum</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</div>
@@ -67,98 +71,91 @@
 </header>
 
 <main>
-	<section class="page-intro">
-		<figure class="page-intro-image">
-			<img src="assets/images/stage.jpg" alt="Empty theater stage" />
-			<figcaption class="page-intro-text">
-				<p>Learn more about our Bludit products built for beginners and coded for developers.</p>
-			</figcaption>
-		</figure>
+	<section id="page-intro">
+		<div id="page-intro-banner" class="section-banner">
+			<div class="section-banner-inner">
+				<h2>Free Themes & Plugins for Bludit</h2>
+			</div>
+		</div>
+		<div class="section-content">
+			<h3>An Introduction to Bludit</h3>
+
+			<p>Surely anyone reading this is already aware that Bludit is a portable, flat-file content management system for building websites. But when first installing Bludit you may be surprised to learn that it does not have as much built-in functionality as something like WordPress. Although Bludit is a decent CMS, the default themes offered by Bludit are not attractive, and the default plugins leave much to be desired.</p>
+
+			<p></p>
+
+			<p>Visit the Bludit website at <a href="https://www.bludit.com/" target="_blank" rel="noopener noreferrer">www.bludit.com</a>.</p>
+		</div>
 	</section>
-	<section></section>
-	<section></section>
+	<section id="configureight">
+		<div id="configureight-banner" class="section-banner">
+			<div class="section-banner-inner">
+				<h2>The Configure 8 Suite</h2>
+			</div>
+		</div>
+		<div class="section-content">
+			<h3>A Cohesive Collection of Themes & Plugins</h3>
+			<p>Content here.</p>
+		</div>
+	</section>
+	<section id="plugins">
+		<div id="plugins-banner" class="section-banner">
+			<div class="section-banner-inner">
+				<h2>Download Free Plugins</h2>
+			</div>
+		</div>
+
+		<div class="section-content accordion" id="plugins-list">
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="heading-breadcrumbs">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#content-breadcrumbs" aria-expanded="true" aria-controls="content-breadcrumbs">Breadcrumbs</button>
+				</h2>
+
+				<div id="content-breadcrumbs" class="accordion-collapse collapse show" aria-labelledby="heading-breadcrumbs" data-bs-parent="#plugins-list">
+					<div class="accordion-body">
+						<h3>Breadcrumbs Navigation</h3>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="heading-cats">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#content-cats" aria-expanded="false" aria-controls="content-cats">Categories Lists</button>
+				</h2>
+
+				<div id="content-cats" class="accordion-collapse collapse" aria-labelledby="heading-cats" data-bs-parent="#plugins-list">
+					<div class="accordion-body">
+						<h3>Categories Lists & Widget</h3>
+					</div>
+				</div>
+			</div>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="heading-pages">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#content-pages" aria-expanded="false" aria-controls="content-pages">Pages Lists</button>
+				</h2>
+
+				<div id="content-pages" class="accordion-collapse collapse" aria-labelledby="heading-pages" data-bs-parent="#plugins-list">
+					<div class="accordion-body">
+						<h3>Pages Lists & Widget</h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="bludiot-info">
+		<div id="bludiot-info-banner" class="section-banner">
+			<div class="section-banner-inner">
+				<h2>About Bludiot Products</h2>
+			</div>
+		</div>
+		<div class="section-content">
+			<h3>Who Made All This Stuff?</h3>
+			<p>Hello, my name is Greg Sweet. I build web stuff under the name Controlled Chaos Design.</p>
+		</div>
+	</section>
 </main>
 
-<div class="accordion" id="accordionExample">
-	<div class="accordion-item">
-		<h2 class="accordion-header" id="headingOne">
-			<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Accordion Section Heading 1</button>
-		</h2>
-
-		<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-			<div class="accordion-body">
-				Accordion Section Content 1
-			</div>
-		</div>
-	</div>
-	<div class="accordion-item">
-		<h2 class="accordion-header" id="headingTwo">
-			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Accordion Section Heading 2</button>
-		</h2>
-
-		<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-			<div class="accordion-body">
-				Accordion Section Content 2
-			</div>
-		</div>
-	</div>
-	<div class="accordion-item">
-		<h2 class="accordion-header" id="headingThree">
-			<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Accordion Section Heading 3</button>
-		</h2>
-
-		<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-			<div class="accordion-body">
-				Accordion Section Content 3
-			</div>
-		</div>
-	</div>
-</div>
-
-<div id="carouselExampleCaptions" class="carousel slide">
-	<div class="carousel-indicators">
-		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-	</div>
-
-	<div class="carousel-inner">
-		<div class="carousel-item active">
-			<img src="https://via.placeholder.com/1200x600/" class="d-block w-100" alt="" />
-
-			<div class="carousel-caption d-none d-md-block">
-				<h5>First slide label</h5>
-				<p>Some representative placeholder content for the first slide.</p>
-			</div>
-		</div>
-		<div class="carousel-item">
-			<img src="https://via.placeholder.com/1200x600/" class="d-block w-100" alt="" />
-			<div class="carousel-caption d-none d-md-block">
-				<h5>Second slide label</h5>
-				<p>Some representative placeholder content for the second slide.</p>
-			</div>
-		</div>
-		<div class="carousel-item">
-			<img src="https://via.placeholder.com/1200x600/" class="d-block w-100" alt="" />
-			<div class="carousel-caption d-none d-md-block">
-				<h5>Third slide label</h5>
-				<p>Some representative placeholder content for the third slide.</p>
-			</div>
-		</div>
-	</div>
-
-	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="visually-hidden">Previous</span>
-	</button>
-	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="visually-hidden">Next</span>
-	</button>
-</div>
-
 <footer id="site-footer" class="site-footer">
-	<p>All content is copyright free.</p>
+	<p class="copyright">All content is copyright free.</p>
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.7.1
